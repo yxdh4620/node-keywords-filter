@@ -10,9 +10,12 @@ main class : keyword_filter.js
 example:
 
 keyword_filter = require '../keyword_filter'
+
 keyArrays = [
           ' SM','violence','cruel']
+          
 testContents = “SM or violence or cruel is sensitive.”
+
 befor = () ->
   #init Data 
   keyword_filter.init(keyArrays)
