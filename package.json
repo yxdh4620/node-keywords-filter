@@ -1,0 +1,14 @@
+{
+    "name": "node-keywords-filter",
+    "version": "0.1.0",
+    "description": "keyword filter ",
+    "author": {
+        "name": "XiangDong Yuan",
+        "email": "yxdh4620@gmail.com"
+    },
+    "main": "./lib/keyword_filter.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/SGF-Games/node-keywords-filter"
+    }
+}
