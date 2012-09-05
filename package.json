@@ -3,8 +3,7 @@
     "version": "0.1.0",
     "description": "keyword filter ",
     "author": {
-        "name": "XiangDong Yuan",
-        "email": "yxdh4620@gmail.com"
+        "name": "SGF-Games"
     },
     "main": "./lib/keyword_filter.js",
     "repository": {
