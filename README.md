@@ -25,14 +25,10 @@ test = () ->
   keyword_filter.isKeyword(testContents)
 
   #replace char 
-  #param : testContents  TYPE:String replace contents
-  #param : 'x' TYPE:char default '*'
   #return replace after String
   keyword_filter.replaceKeyword(testContents,'x')
 
-  #replace word. compare replaceKeyword() efficient
-  #param : testContents  TYPE:String replace contents
-  #param : 'sensitive' TYPE:String  default '敏感词'
+  #replace word
   #return replace after String
   keyword_filter.replaceStrKeyword(testContents,'sensitive')
   
