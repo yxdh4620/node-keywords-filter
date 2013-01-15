@@ -5,6 +5,7 @@
 # keyword Filter 的主文件
 
 NodeTree = require "./module/node_tree"
+infor = require "./data/information"
 change_case = require "./util/change_case"
 
 rootNode = NodeTree.getInstance()
@@ -20,6 +21,7 @@ replaceIndexChar = (str,index,char) ->
   return str.substring(0,index)+char+str.substring(index+1,str.length)
 
 module.exports =
+
   init: (keyArray) ->
     infor.initData(keyArray)
     this.createNodeTree()
