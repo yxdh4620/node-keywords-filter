@@ -6,6 +6,7 @@
 
 NodeTree = require "./module/node_tree"
 infor = require "./data/information"
+change_case = require "./util/change_case"
 
 rootNode = NodeTree.getInstance()
 #可复用变量
@@ -28,9 +29,10 @@ module.exports =
     console.log "[createNodeTree start]"
     keyArray = infor.getKeyArray()
     for key,i in keyArray
+      key = change_case.change key
       tempNode = rootNode
       for char,j in key
-        subNode = tempNode.getNode(char)
+        subNode = tempNode.getNode(change_case.toCBDChange(char))
         if subNode == undefined
           subNode = NodeTree.getInstance()
           tempNode.setNode(char,subNode)
@@ -44,8 +46,9 @@ module.exports =
     tempNode = rootNode
     rollback = 0
     position = 0
+    str = ChangeCase.change(str)
     while position<str.length
-      char = str.charAt(position)
+      char = change_case.toCBDChange(str.charAt(position))
       tempNode = tempNode.getNode(char)
       if tempNode==undefined
         position = position - rollback
@@ -62,6 +65,7 @@ module.exports =
     tempNode = rootNode
     rollback = 0
     position = 0
+    str = change_case.change(str)
     while position<str.length
 #      char = str.charAt(position)
       tempNode = tempNode.getNode(str.charAt(position))
@@ -82,8 +86,9 @@ module.exports =
     tempNode = rootNode
     rollback = 0
     position = 0
+    str = change_case.change(str)
     while position<str.length
-      tempNode = tempNode.getNode(str.charAt(position))
+      tempNode = tempNode.getNode(change_case.toCBDChange(str.charAt(position)))
       if tempNode==undefined
         position = position - rollback
         rollback = 0
@@ -96,4 +101,4 @@ module.exports =
       position++
     return str
 
-module.exports.createNodeTree()
+#module.exports.createNodeTree()
