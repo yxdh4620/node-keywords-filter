@@ -46,9 +46,9 @@ module.exports =
     tempNode = rootNode
     rollback = 0
     position = 0
-    str = ChangeCase.change(str)
+    str = change_case.change(str)
     while position<str.length
-      char = change_case.toCBDChange(str.charAt(position))
+      char = str.charAt(position)
       tempNode = tempNode.getNode(char)
       if tempNode==undefined
         position = position - rollback
@@ -67,7 +67,6 @@ module.exports =
     position = 0
     str = change_case.change(str)
     while position<str.length
-#      char = str.charAt(position)
       tempNode = tempNode.getNode(str.charAt(position))
       if tempNode==undefined
         position = position - rollback
@@ -88,7 +87,7 @@ module.exports =
     position = 0
     str = change_case.change(str)
     while position<str.length
-      tempNode = tempNode.getNode(change_case.toCBDChange(str.charAt(position)))
+      tempNode = tempNode.getNode(str.charAt(position))
       if tempNode==undefined
         position = position - rollback
         rollback = 0
