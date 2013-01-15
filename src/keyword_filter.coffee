@@ -5,6 +5,7 @@
 # keyword Filter 的主文件
 
 NodeTree = require "./module/node_tree"
+infor = require "./data/information"
 change_case = require "./util/change_case"
 
 rootNode = NodeTree.getInstance()
