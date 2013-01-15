@@ -32,7 +32,7 @@ module.exports =
       key = change_case.change key
       tempNode = rootNode
       for char,j in key
-        subNode = tempNode.getNode(change_case.toCBDChange(char))
+        subNode = tempNode.getNode(char)
         if subNode == undefined
           subNode = NodeTree.getInstance()
           tempNode.setNode(char,subNode)
