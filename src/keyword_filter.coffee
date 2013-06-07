@@ -41,8 +41,6 @@ module.exports =
         if j  == key.length - 1
           subNode.setEnd(true)
 
-
-
   isContainKeyword : (str) ->
     tempNode = rootNode
     rollback = 0
