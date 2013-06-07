@@ -21,6 +21,7 @@ replaceIndexChar = (str,index,char) ->
   return str.substring(0,index)+char+str.substring(index+1,str.length)
 
 module.exports =
+
   init: (keyArray) ->
     infor.initData(keyArray)
     this.createNodeTree()
@@ -39,8 +40,6 @@ module.exports =
         tempNode = subNode
         if j  == key.length - 1
           subNode.setEnd(true)
-
-
 
   isContainKeyword : (str) ->
     tempNode = rootNode
