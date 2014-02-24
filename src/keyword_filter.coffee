@@ -60,11 +60,12 @@ module.exports =
       position++
     return false
 
-  replaceKeyword : (str,reChar='*') ->
+  replaceKeyword : (str,reChar='*',isChange=true) ->
     tempNode = rootNode
     rollback = 0
     position = 0
-    str = change_case.change(str)
+    if isChange
+      str = change_case.change(str)
     while position<str.length
       tempNode = tempNode.getNode(str.charAt(position))
       if tempNode==undefined
@@ -80,11 +81,12 @@ module.exports =
       position++
     return str
 
-  replaceStrKeyword : (str,reStr='敏感词') ->
+  replaceStrKeyword : (str,reStr='敏感词',isChange=true) ->
     tempNode = rootNode
     rollback = 0
     position = 0
-    str = change_case.change(str)
+    if isChange
+      str = change_case.change(str)
     while position<str.length
       tempNode = tempNode.getNode(str.charAt(position))
       if tempNode==undefined
