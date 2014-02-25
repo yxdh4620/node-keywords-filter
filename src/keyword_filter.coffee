@@ -42,11 +42,12 @@ module.exports =
         if j  == key.length - 1
           subNode.setEnd(true)
 
-  isContainKeyword : (str) ->
+  isContainKeyword : (str,isChange=true) ->
     tempNode = rootNode
     rollback = 0
     position = 0
-    str = change_case.change(str)
+    if isChange
+      str = change_case.change(str)
     while position<str.length
       char = str.charAt(position)
       tempNode = tempNode.getNode(char)
