@@ -60,7 +60,7 @@ module.exports =
       position++
     return false
 
-  replaceKeyword : (str,reChar='*',isChange=true) ->
+  replaceKeyword : (str, isChange=true, reChar='*') ->
     tempNode = rootNode
     rollback = 0
     position = 0
@@ -81,7 +81,7 @@ module.exports =
       position++
     return str
 
-  replaceStrKeyword : (str,reStr='敏感词',isChange=true) ->
+  replaceStrKeyword : (str, isChange=true, reStr='敏感词') ->
     tempNode = rootNode
     rollback = 0
     position = 0
