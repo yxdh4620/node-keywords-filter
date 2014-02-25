@@ -22,15 +22,16 @@ replaceIndexChar = (str,index,char) ->
 
 module.exports =
 
-  init: (keyArray) ->
+  init: (keyArray,isChange=true) ->
     infor.initData(keyArray)
-    this.createNodeTree()
+    this.createNodeTree(isChange)
 
-  createNodeTree: () ->
+  createNodeTree: (isChange=true) ->
     console.log "[createNodeTree start]"
     keyArray = infor.getKeyArray()
     for key,i in keyArray
-      key = change_case.change key
+      if isChange
+        key = change_case.change key
       tempNode = rootNode
       for char,j in key
         subNode = tempNode.getNode(char)
