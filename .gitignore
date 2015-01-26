@@ -9,6 +9,7 @@ lib-cov
 *.swp
 tags
 
+files
 pids
 logs
 results

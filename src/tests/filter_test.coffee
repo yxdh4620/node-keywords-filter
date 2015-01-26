@@ -5,7 +5,7 @@
 ## Module dependencies
 should = require "should"
 keyword_filter = require "../keyword_filter"
-
+fs = require "fs"
 
 array = ['sM', '大小', '枪支', '枪', 'a', '枪支弹药', '大人']
 keyword_filter.init array
@@ -30,13 +30,56 @@ describe "test keyword_filter", ->
     it "keyword_filter replaceKeyword", (done) ->
       strs.map (str) ->
         console.log str
-        console.log keyword_filter.replaceKeyword str
+        console.log keyword_filter.replaceKeyword str, false
       done()
 
-    it "keyword_filter replaceIndexChar", (done) ->
+    it "keyword_filter replaceStrKeyword", (done) ->
       strs.map (str) ->
         console.log str
-        console.log keyword_filter.replaceStrKeyword str
+        console.log keyword_filter.replaceStrKeyword str, false
+      done()
+
+    it "keyword_filter calcCount", (done) ->
+      strs.map (str) ->
+        console.log str
+        console.log keyword_filter.calcCount str, false
+      done()
+
+  #效率测试
+  describe "effciency test", ->
+    it "keyword_filter isContainKeyword", (done) ->
+      data = fs.readFileSync '../../files/test1.txt',"utf8"
+      console.log data.length
+      start = Date.now()
+      console.log keyword_filter.isContainKeyword data
+      console.log " times: #{Date.now()-start}"
+      done()
+
+    it "keyword_filter replaceKeyword", (done) ->
+      data = fs.readFileSync '../../files/test1.txt',"utf8"
+      console.log data.length
+      start = Date.now()
+      str = keyword_filter.replaceKeyword data
+      console.log str
+      console.log " times: #{Date.now()-start}"
+      done()
+
+    it "keyword_filter replaceStrKeyword", (done) ->
+      data = fs.readFileSync '../../files/test1.txt',"utf8"
+      console.log data.length
+      start = Date.now()
+      str = keyword_filter.replaceStrKeyword data
+      #console.log str
+      console.log " times: #{Date.now()-start}"
+      done()
+
+    it "keyword_filter calcCount", (done) ->
+      data = fs.readFileSync '../../files/test1.txt',"utf8"
+      console.log data.length
+      start = Date.now()
+      count = keyword_filter.calcCount data
+      console.log count
+      console.log " times: #{Date.now()-start}"
       done()
 
 

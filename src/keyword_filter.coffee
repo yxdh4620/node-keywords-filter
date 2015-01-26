@@ -162,4 +162,36 @@ module.exports =
       str = replaceIndexStr str, work[0], work[1], reStr
     return str
 
+  calcCount: (str, isChange) ->
+    tempNode = rootNode
+    start = 0
+    end = 0
+    len = 0
+    isEnd = false
+    unless isChange?
+      isChange = IS_CHANGE
+    if isChange
+      str = change_case.change(str)
+    i = 0
+    while start+len<str.length
+      tempNode = tempNode.getNode(str.charAt(start+len))
+      if tempNode==undefined
+        if isEnd
+          #console.log "start:#{start} end:#{start+len} isEnd:#{isEnd}"
+          start = start+len
+          i++
+        else
+          start++
+        isEnd = false
+        len = 0
+        tempNode = rootNode
+        #console.log "2start:#{start} end:#{start+len} isEnd:#{isEnd}"
+      else if tempNode.isEnd()
+        isEnd = true
+        len++
+      else
+        len++
+    i++ if isEnd
+    return i
+
 #module.exports.createNodeTree()
