@@ -34,5 +34,6 @@ class NodeTree
 
   getNodeArray:()->
     return this.NodeArray
+
 module.exports = NodeTree
 
