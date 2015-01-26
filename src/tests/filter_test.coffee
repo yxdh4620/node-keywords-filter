@@ -60,7 +60,7 @@ describe "test keyword_filter", ->
       console.log data.length
       start = Date.now()
       str = keyword_filter.replaceKeyword data
-      console.log str
+      #console.log str
       console.log " times: #{Date.now()-start}"
       done()
 
