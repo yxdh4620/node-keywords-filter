@@ -162,6 +162,8 @@ module.exports =
       str = replaceIndexStr str, work[0], work[1], reStr
     return str
 
+  # 计算字符串所含敏感词数量
+  #
   calcCount: (str, isChange) ->
     tempNode = rootNode
     start = 0
