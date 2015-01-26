@@ -11,7 +11,9 @@ array = ['sM', '大小', '枪支', '枪', 'a', '枪支弹药', '大人']
 keyword_filter.init array
 str1 = 'afadfaSmsmsM, dadfafd大小大人大的强制枪支枪支弹药手枪'
 str2 = '枪支枪支弹药枪afbadakfja8sm阿达撒开了房哈覅大小人'
-strs = ['枪', str1, str2]
+str3 = 'asfdja adfja;skf dsafowre较大；烧开后覅回复哈的骄傲饭卡地方发大水发回复哈佛'
+str4 = 'dsgfsdtresfdrnemr较大；烧开后覅回复哈的骄傲饭卡地方发大水发回复哈佛'
+strs = ['枪', str1, str2, str3, str4]
 ## Test cases
 describe "test keyword_filter", ->
 
